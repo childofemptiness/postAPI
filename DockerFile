@@ -1,0 +1,28 @@
+FROM php:8.0-fpm
+
+WORKDIR /var/www/html
+
+# Установка зависимостей
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    curl \
+    unzip \
+    libpq-dev \
+    && docker-php-ext-install pdo pdo_pgsql mbstring exif pcntl bcmath gd
+
+# Копирование приложения
+COPY . /var/www/html
+RUN composer install --no-dev --optimize-autoloader
+
+# Установка прав доступа
+RUN chown -R www-data:www-data /var/www/html \
+    && find /var/www/html -type d -exec chmod 755 {} \; \
+    && find /var/www/html -type f -exec chmod 644 {} \; \
+    && chmod -R 777 /var/www/html/storage \
+    && chmod -R 777 /var/www/html/bootstrap/cache
+
+# Установка Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

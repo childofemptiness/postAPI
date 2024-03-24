@@ -1,0 +1,197 @@
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#createPostButton {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px; /* Увеличим боковые отступы для лучшего визуального вида */
+    background-color: #333; /* Темно-серый фон */
+    color: white; /* Белый текст */
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 15px; /* Закругленные края */
+    margin-left: 150px;
+    border: 1px solid #555; /* Легкая серая обводка для лучшего контраста */
+    font-size: 16px; /* Немного увеличим шрифт */
+    font-weight: 500; /* Умеренная жирность текста */
+}
+
+#createPostButton a { 
+    text-decoration: none;
+    color: white; /* Подтверждаем, что ссылка остается белой */
+    display: block; /* Убедимся, что ссылка заполняет всю область кнопки */
+}
+
+
+.container {
+    display: flex;
+
+    width: 100%;
+}
+
+.half {
+    flex: 1; /* Гарантирует, что каждая "половина" занимает равное пространство */
+}
+
+/* Стили для контейнера формы */
+#formContainer {
+    max-width: 600px; /* Ограничение ширины контейнера формы */
+    margin: 20px auto; /* Центрирование и добавление отступов сверху и снизу */
+    padding: 20px; /* Добавление внутренних отступов */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); Легкая тень для добавления глубины */
+    border-radius: 8px; /* Скругление углов */
+    background-color: #ffffff; /* Белый фоновый цвет */
+}
+
+/* Стили для элементов ввода в форме */
+form input[type="text"],
+form textarea {
+    width: 100%; /* Расширение до полной ширины контейнера */
+    padding: 10px; /* Добавление внутренних отступов */
+    margin-bottom: 15px; /* Добавление отступа снизу */
+    border-radius: 5px; /* Скругленные углы */
+    border: 1px solid #ccc; /* Серая тонкая граница */
+}
+
+form textarea {
+    resize: vertical; /* Позволяет пользователю изменять высоту текстового поля */
+}
+
+/* Стили для кнопок */
+form input[type="submit"],
+form button {
+    padding: 10px 20px; /* Внутренние отступы */
+    background-color: #C7D0CC; /* Голубой фоновый цвет */
+    color: #1a1a1a; /* Белый текст */
+    border: none; /* Без границ */
+    border-radius: 5px; /* Скругленные углы */
+    cursor: pointer; /* Изменяет курсор на указывающий при наведении */
+    margin-right: 10px; /* Отступ справа */
+}
+
+form button {
+    background-color: #434b4d; /* Красный цвет для кнопки "Отмена" */
+    color: #ffffff;
+}
+
+/* Стиль для подсветки кнопок при наведении */
+form input[type="submit"]:hover,
+form button:hover {
+    opacity: 0.9; /* Слегка затемнение при наведении */
+}
+
+/* Повышает удобство чтения для вводимого текста */
+form input[type="text"],
+form textarea {
+    font-size: 16px; /* Больший размер текста */
+    line-height: 1.5; /* Увеличенный межстрочный интервал */
+}
+
+/* CSS для контейнера постов */
+#posts {
+    text-align: center;
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем внутренние отступы */
+}
+
+.half#posts {
+    size: 25px;
+}
+
+.post-link {
+    display: block; /* Стилизуем ссылки как блочные элементы, так они будут занимать всю ширину */
+    padding: 10px; /* Добавляем немного отступов для удобства */
+    text-decoration: none; /* Убираем подчёркивание текста у ссылок */
+    border: 1px solid #ddd; /* Добавляем границу вокруг каждого поста */
+    margin: 10px; /* Добавляем немного маргина между постами */
+    background-color: #f8f8f8; /* Легкий серый фон для каждой ссылки */
+    color: #333; /* Темно-серый цвет текста */
+    transition: background-color 0.2s; /* Плавный переход фона при наведении */
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-link:hover {
+    background-color: #e8e8e8; /* Светлее серый фон при наведении курсора на пост */
+}
+
+#listTitle {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.post {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.post-title {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.post-content p {
+    line-height: 1.6;
+    text-align: justify;
+    margin: 10px 0;
+}
+
+.post-buttons {
+
+    margin-top: 5px;
+}
+
+/* Общие стили для обеих кнопок */
+.delete-post-button, .edit-post-button {
+    border: none;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Стили для кнопки удаления */
+.delete-post-button {
+    background-color: #333333; /* Темно-серый */
+}
+
+/* Изменение фона кнопок при наведении */
+.delete-post-button:hover {
+    background-color: #555555; /* Чуть светлее темно-серого */
+}
+
+/* Стили для кнопки редактирования */
+.edit-post-button {
+    background-color: #EEEEEE; /* Светло-серый */
+    color: #333333; /* Текст темно-серый для контраста на светлом фоне */
+}
+
+/* Изменение фона кнопки редактирования при наведении */
+.edit-post-button:hover {
+    background-color: #CCCCCC; /* Чуть темнее светло-серого, для наведения */
+}
+
+#editLink {
+    text-decoration: none;
+    color: black;
+}
