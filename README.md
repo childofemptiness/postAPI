@@ -131,10 +131,10 @@ POST /posts
 
 ```json
 {
-    "title": 'Test 3', 
-    "content": 'Test post 3', 
-    "updated_at": '2024-03-24T20:41:10.000000Z', 
-    "created_at": '2024-03-24T20:41:10.000000Z', 
+    "title": "Test 3", 
+    "content": "Test post 3", 
+    "updated_at": "2024-03-24T20:41:10.000000Z", 
+    "created_at": "2024-03-24T20:41:10.000000Z", 
     "id": 14
 }
 ```
