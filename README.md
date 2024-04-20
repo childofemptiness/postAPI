@@ -150,10 +150,10 @@ PUT/PATCH /posts{post}
 ```json
 {
     "id": 14, 
-    "created_at": '2024-03-24T20:41:10.000000Z', 
-    "updated_at": '2024-03-24T20:47:17.000000Z', 
-    "title": 'Test 3*', 
-    "content": 'Test test post 3'
+    "created_at": "2024-03-24T20:41:10.000000Z", 
+    "updated_at": "2024-03-24T20:47:17.000000Z", 
+    "title": "Test 3", 
+    "content": "Test test post 3",
 }
 ```
 
